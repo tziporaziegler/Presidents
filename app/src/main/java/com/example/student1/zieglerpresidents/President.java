@@ -1,13 +1,17 @@
 package com.example.student1.zieglerpresidents;
 
+import com.google.gson.annotations.SerializedName;
+
 public class President {
 
     private int number;
     private String president;
-    private int birth_year;
-    private int death_year;
-    private String took_office;
-    private String left_office;
+    private int birthYear;
+    private Integer death_year; //can be null
+
+    //@SerializedName(took_office) = read took_office as tookOffice
+    private String tookOffice;
+    private String leftOffice;
     private String party;
 
     public int getNumber() {
@@ -26,36 +30,36 @@ public class President {
         this.president = president;
     }
 
-    public int getBirth_year() {
-        return birth_year;
+    public int getBirthYear() {
+        return birthYear;
     }
 
-    public void setBirth_year(int birth_year) {
-        this.birth_year = birth_year;
+    public void setBirthYear(int birth_year) {
+        this.birthYear = birth_year;
     }
 
-    public int getDeath_year() {
+    public Integer getDeathYear() {
         return death_year;
     }
 
-    public void setDeath_year(int death_year) {
+    public void setDeathYear(int death_year) {
         this.death_year = death_year;
     }
 
-    public String getTook_office() {
-        return took_office;
+    public String getTookOffice() {
+        return tookOffice;
     }
 
-    public void setTook_office(String took_office) {
-        this.took_office = took_office;
+    public void setTookOffice(String took_office) {
+        this.tookOffice = took_office;
     }
 
-    public String getLeft_office() {
-        return left_office;
+    public String getLeftOffice() {
+        return leftOffice;
     }
 
-    public void setLeft_office(String left_office) {
-        this.left_office = left_office;
+    public void setLeftOffice(String left_office) {
+        this.leftOffice = left_office;
     }
 
     public String getParty() {

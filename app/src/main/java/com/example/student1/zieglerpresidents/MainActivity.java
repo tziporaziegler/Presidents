@@ -7,7 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.FieldNamingStrategy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -26,7 +29,16 @@ public class MainActivity extends AppCompatActivity {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
 
-        Gson gson = new Gson();
+        //GsonBuilder is what creates Gson
+        //tell it to read all under_scores as cammelCase
+        //GsonBuilder builder = new GsonBuilder();
+        //builder.setFieldNamingStrategy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES);
+        //Gson gson = new GsonBuilder().create();
+
+        Gson gson = new GsonBuilder()
+                .setFieldNamingStrategy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                .create();
+
         InputStream in = getResources().openRawResource(R.raw.presidents);
         President presidents [] = gson.fromJson(new InputStreamReader(in), President[].class);
 
