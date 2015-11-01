@@ -2,6 +2,10 @@ package com.example.student1.zieglerpresidents;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class President {
 
     private int number;
