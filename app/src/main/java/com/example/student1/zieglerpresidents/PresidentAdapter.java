@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 public class PresidentAdapter extends RecyclerView.Adapter<PresidentViewHolder>{
 
-    public static President[] presidents;
+    private President[] presidents;
 
     public PresidentAdapter(President[] presidents) {
         this.presidents = presidents;
@@ -22,7 +22,7 @@ public class PresidentAdapter extends RecyclerView.Adapter<PresidentViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(final PresidentViewHolder holder, int position) {
+    public void onBindViewHolder(final PresidentViewHolder holder, final int position) {
         holder.bind(presidents[position]);
 
         holder.itemView.setOnClickListener(new View.OnClickListener()
@@ -31,6 +31,8 @@ public class PresidentAdapter extends RecyclerView.Adapter<PresidentViewHolder>{
             public void onClick(View v) {
                 Context context = holder.itemView.getContext();
                 Intent intent  = new Intent(context, DetailActivity.class);
+                intent.putExtra("PRESIDENTS", presidents);
+                intent.putExtra("POSITION", position);
                 context.startActivity(intent);
             }
         });

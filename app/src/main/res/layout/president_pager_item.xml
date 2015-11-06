@@ -2,9 +2,10 @@
 <ScrollView
     android:layout_height="wrap_content"
     android:layout_width="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,42 +13,41 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="50sp"/>
+        android:textSize="50sp"
+        tools:text="NAME"/>
 
     <ImageView
         android:id="@+id/pic"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        tools:text="TEMP"
+        />
 
     <TextView
         android:id="@+id/lifeDates"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <LinearLayout
-        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_below="@id/pic"
+        android:layout_alignParentRight="true"
+        tools:text="TEMP"/>
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="President Number: "
             android:textSize="24sp"
-            android:textColor="@color/dark_blue"/>
+            android:textColor="@color/dark_blue"
+            android:layout_below="@id/lifeDates"/>
 
         <TextView
             android:id="@+id/number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="@color/grey_blue"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            android:textColor="@color/grey_blue"
+            android:layout_alignParentRight="true"
+            tools:text="TEMP"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -61,13 +61,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="@color/grey_blue"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            android:textColor="@color/grey_blue"
+            android:layout_alignParentRight="true"
+            tools:text="TEMP"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -81,13 +77,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="@color/grey_blue"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            android:textColor="@color/grey_blue"
+            android:layout_alignParentRight="true"
+            tools:text="TEMP"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -101,13 +93,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="@color/grey_blue"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            android:textColor="@color/grey_blue"
+            android:layout_alignParentRight="true"
+            tools:text="TEMP"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -121,13 +109,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="@color/grey_blue"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            android:textColor="@color/grey_blue"
+            android:layout_alignParentRight="true"
+            tools:text="TEMP"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -141,13 +125,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="@color/grey_blue"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            android:textColor="@color/grey_blue"
+            android:layout_alignParentRight="true"
+            tools:text="TEMP"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -161,9 +141,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="@color/grey_blue"/>
-    </LinearLayout>
+            android:textColor="@color/grey_blue"
+            android:layout_centerHorrizontal="true"
+            android:layout_alignParentRight="true"
+            tools:text="TEMP"/>
 
 
-</LinearLayout>
+</RelativeLayout>
 </ScrollView>

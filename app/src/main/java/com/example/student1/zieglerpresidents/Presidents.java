@@ -1,6 +1,6 @@
 package com.example.student1.zieglerpresidents;
 
-import java.util.List;
+import java.io.Serializable;
 
 public class Presidents
 {
