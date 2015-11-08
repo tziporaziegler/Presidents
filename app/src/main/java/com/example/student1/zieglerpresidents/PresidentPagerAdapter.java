@@ -65,8 +65,14 @@ public class PresidentPagerAdapter extends PagerAdapter {
         presName = president.getPresident();
         name.setText(presName);
         number.setText(String.valueOf(president.getNumber()));
+
         born.setText(String.valueOf(president.getBirthYear()));
-        died.setText(String.valueOf(president.getDeathYear()));
+
+        String deathStr = String.valueOf(president.getDeathYear());
+        if(deathStr.equals("null")) {
+            deathStr = "---";
+        }
+        died.setText(deathStr);
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         DateFormat monthFormat = new SimpleDateFormat("MMM");
@@ -90,10 +96,13 @@ public class PresidentPagerAdapter extends PagerAdapter {
 
 
         Date leftOfficeDate = new Date();
-        try {
-            leftOfficeDate = dateFormat.parse(president.getLeftOffice());
-        } catch (ParseException e) {
-            e.printStackTrace();
+        String leftOfficeStr = president.getLeftOffice();
+        if(leftOfficeStr != null) {
+            try {
+                leftOfficeDate = dateFormat.parse(president.getLeftOffice());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
 
         cal.setTime(leftOfficeDate);
@@ -103,7 +112,9 @@ public class PresidentPagerAdapter extends PagerAdapter {
         String leftMonthStr = monthFormat.format(cal.getTime());
 
         int leftDay = cal.get(Calendar.DAY_OF_MONTH);
-        leftOffice.setText(leftDayOfWeek + ", " + leftMonthStr + " " + leftDay + ", " + leftYear);
+
+        leftOfficeStr = leftOfficeStr == null ? "---" : leftDayOfWeek + ", " + leftMonthStr + " " + leftDay + ", " + leftYear;
+        leftOffice.setText(leftOfficeStr);
 
         int timeInOfficeNum = leftYear - tookYear;
         if (timeInOfficeNum > 0) {
