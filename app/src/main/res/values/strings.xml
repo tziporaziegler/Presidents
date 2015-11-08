@@ -1,6 +1,13 @@
 <resources>
-    <string name="app_name">Ziegler.Presidents</string>
+    <string name="app_name">U.S. Presidents</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="pres_pic">Picture of President</string>
+    <string name="pres_number">President Number:&#160;</string>
+    <string name="took_office">Took Office:&#160;</string>
+    <string name="left_office">Left Office:&#160;</string>
+    <string name="party">Party:&#160;</string>
+    <string name="years_in_office">Years in Office:&#160;</string>
+    <string name="died">Died:&#160;</string>
+    <string name="born">Born:&#160;</string>
 </resources>

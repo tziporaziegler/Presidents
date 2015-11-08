@@ -15,7 +15,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class RetrieveImgTask extends AsyncTask<String, Void, String>{
+public class RetrieveImgTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... presName) {

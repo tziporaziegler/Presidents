@@ -14,7 +14,7 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
-        President presidents[]  = (President[]) getIntent().getSerializableExtra("PRESIDENTS");
+        President presidents[] = (President[]) getIntent().getSerializableExtra("PRESIDENTS");
         PresidentPagerAdapter adapter = new PresidentPagerAdapter(presidents, this.getBaseContext());
         viewPager.setAdapter(adapter);
 

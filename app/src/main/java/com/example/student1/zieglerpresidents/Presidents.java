@@ -2,8 +2,7 @@ package com.example.student1.zieglerpresidents;
 
 import java.io.Serializable;
 
-public class Presidents
-{
+public class Presidents {
     President[] presidents;
 
     public President[] getPresidents() {

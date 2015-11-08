@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = (RecyclerView)findViewById(R.id.list);
+        recyclerView = (RecyclerView) findViewById(R.id.list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 .create();
 
         InputStream in = getResources().openRawResource(R.raw.presidents);
-        President presidents [] = gson.fromJson(new InputStreamReader(in), President[].class);
+        President presidents[] = gson.fromJson(new InputStreamReader(in), President[].class);
 
         PresidentAdapter adapter = new PresidentAdapter(presidents);
         recyclerView.setAdapter(adapter);

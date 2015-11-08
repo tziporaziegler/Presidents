@@ -8,14 +8,12 @@ public class PresidentViewHolder extends RecyclerView.ViewHolder {
 
     private TextView name;
 
-    public PresidentViewHolder(View itemView)
-    {
+    public PresidentViewHolder(View itemView) {
         super(itemView);
-        name = (TextView)itemView.findViewById(R.id.name);
+        name = (TextView) itemView.findViewById(R.id.name);
     }
 
-    public void bind(President president)
-    {
+    public void bind(President president) {
         name.setText(president.getPresident());
     }
 }

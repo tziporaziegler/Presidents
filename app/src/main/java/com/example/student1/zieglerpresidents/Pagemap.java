@@ -2,7 +2,7 @@ package com.example.student1.zieglerpresidents;
 
 public class Pagemap {
 
-    private Src [] cse_image;
+    private Src[] cse_image;
 
     public Src[] getCse_image() {
         return cse_image;

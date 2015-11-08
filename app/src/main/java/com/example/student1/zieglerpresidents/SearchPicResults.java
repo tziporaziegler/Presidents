@@ -2,7 +2,7 @@ package com.example.student1.zieglerpresidents;
 
 public class SearchPicResults {
 
-    private SearchResult [] items;
+    private SearchResult[] items;
 
     public SearchResult[] getItems() {
         return items;

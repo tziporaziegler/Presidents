@@ -1,151 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:layout_height="wrap_content"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="wrap_content">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/name"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="50sp"
-        tools:text="NAME"/>
-
-    <ImageView
-        android:id="@+id/pic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="TEMP"
-        />
-
-    <TextView
-        android:id="@+id/lifeDates"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/pic"
-        android:layout_alignParentRight="true"
-        tools:text="TEMP"/>
-
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="President Number: "
-            android:textSize="24sp"
+            android:layout_centerHorizontal="true"
+            android:textSize="50sp"
+            tools:text="George Washington" />
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/pres_pic" />
+
+        <TextView
+            android:id="@+id/number_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pic"
+            android:text="@string/pres_number"
             android:textColor="@color/dark_blue"
-            android:layout_below="@id/lifeDates"/>
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/number_label"
+            android:layout_alignBottom="@+id/number_label"
+            android:layout_toEndOf="@+id/number_label"
+            android:layout_toRightOf="@+id/number_label"
             android:textColor="@color/grey_blue"
-            android:layout_alignParentRight="true"
-            tools:text="TEMP"/>
+            android:textSize="20sp"
+            tools:text="1" />
 
         <TextView
+            android:id="@+id/born_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Born: "
-            android:textSize="24sp"
-            android:textColor="@color/dark_blue"/>
+            android:layout_below="@id/number"
+            android:text="@string/born"
+            android:textColor="@color/dark_blue"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/born"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/born_label"
+            android:layout_alignBottom="@+id/born_label"
+            android:layout_toEndOf="@+id/born_label"
+            android:layout_toRightOf="@+id/born_label"
             android:textColor="@color/grey_blue"
-            android:layout_alignParentRight="true"
-            tools:text="TEMP"/>
+            android:textSize="20sp"
+            tools:text="1732" />
 
         <TextView
+            android:id="@+id/died_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Died: "
-            android:textSize="24sp"
-            android:textColor="@color/dark_blue"/>
+            android:layout_below="@id/born"
+            android:text="@string/died"
+            android:textColor="@color/dark_blue"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/died"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/died_label"
+            android:layout_alignBottom="@+id/died_label"
+            android:layout_toEndOf="@id/died_label"
+            android:layout_toRightOf="@id/died_label"
             android:textColor="@color/grey_blue"
-            android:layout_alignParentRight="true"
-            tools:text="TEMP"/>
+            android:textSize="20sp"
+            tools:text="1799" />
 
         <TextView
+            android:id="@+id/tookOffice_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Took Office: "
-            android:textSize="24sp"
-            android:textColor="@color/dark_blue"/>
+            android:layout_below="@id/died"
+            android:text="@string/took_office"
+            android:textColor="@color/dark_blue"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tookOffice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/tookOffice_label"
+            android:layout_alignBottom="@+id/tookOffice_label"
+            android:layout_toEndOf="@+id/tookOffice_label"
+            android:layout_toRightOf="@+id/tookOffice_label"
             android:textColor="@color/grey_blue"
-            android:layout_alignParentRight="true"
-            tools:text="TEMP"/>
+            android:textSize="20sp"
+            tools:text="April 30, 1789" />
 
         <TextView
+            android:id="@+id/leftOffice_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Left Office: "
-            android:textSize="24sp"
-            android:textColor="@color/dark_blue"/>
+            android:layout_below="@id/tookOffice"
+            android:text="@string/left_office"
+            android:textColor="@color/dark_blue"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/leftOffice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/leftOffice_label"
+            android:layout_alignBottom="@+id/leftOffice_label"
+            android:layout_toEndOf="@id/leftOffice_label"
+            android:layout_toRightOf="@id/leftOffice_label"
             android:textColor="@color/grey_blue"
-            android:layout_alignParentRight="true"
-            tools:text="TEMP"/>
+            android:textSize="20sp"
+            tools:text="March 4, 1797" />
 
         <TextView
+            android:id="@+id/yearsInOffice_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Years in Office: "
-            android:textSize="24sp"
-            android:textColor="@color/dark_blue"/>
+            android:layout_below="@id/leftOffice"
+            android:text="@string/years_in_office"
+            android:textColor="@color/dark_blue"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/yearsInOffice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/yearsInOffice_label"
+            android:layout_alignBottom="@+id/yearsInOffice_label"
+            android:layout_toEndOf="@id/yearsInOffice_label"
+            android:layout_toRightOf="@id/yearsInOffice_label"
             android:textColor="@color/grey_blue"
-            android:layout_alignParentRight="true"
-            tools:text="TEMP"/>
+            android:textSize="20sp"
+            tools:text="8" />
 
         <TextView
+            android:id="@+id/party_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Party: "
-            android:textSize="24sp"
-            android:textColor="@color/dark_blue"/>
+            android:layout_below="@id/yearsInOffice"
+            android:text="@string/party"
+            android:textColor="@color/dark_blue"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/party"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/party_label"
+            android:layout_alignBottom="@+id/party_label"
+            android:layout_toEndOf="@id/party_label"
+            android:layout_toRightOf="@id/party_label"
             android:textColor="@color/grey_blue"
-            android:layout_centerHorrizontal="true"
-            android:layout_alignParentRight="true"
-            tools:text="TEMP"/>
+            android:textSize="20sp"
+            tools:text="No Party" />
 
-
-</RelativeLayout>
+    </RelativeLayout>
 </ScrollView>
