@@ -5,4 +5,11 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="PresInfoLabel">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/dark_blue</item>
+    </style>
+
+    <style name="PresInfo"></style>
+
 </resources>
