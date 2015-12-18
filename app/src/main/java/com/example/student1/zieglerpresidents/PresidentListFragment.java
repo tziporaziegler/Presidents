@@ -3,6 +3,7 @@ package com.example.student1.zieglerpresidents;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -46,9 +47,9 @@ public class PresidentListFragment extends Fragment{
                 .create();
 
         InputStream in = getResources().openRawResource(R.raw.presidents);
-        President presidents[] = gson.fromJson(new InputStreamReader(in), President[].class);
+        final President presidents[] = gson.fromJson(new InputStreamReader(in), President[].class);
 
-        PresidentAdapter adapter = new PresidentAdapter(presidents);
+        PresidentAdapter adapter = new PresidentAdapter(presidents, (OnPresidentSelectedListener) getActivity());
         recyclerView.setAdapter(adapter);
     }
 }
