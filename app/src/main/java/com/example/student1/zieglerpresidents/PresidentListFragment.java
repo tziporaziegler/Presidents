@@ -16,6 +16,13 @@ import com.google.gson.GsonBuilder;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.GsonConverterFactory;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class PresidentListFragment extends Fragment{
 
@@ -42,14 +49,36 @@ public class PresidentListFragment extends Fragment{
         //builder.setFieldNamingStrategy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES);
         //Gson gson = new GsonBuilder().create();
 
-        Gson gson = new GsonBuilder()
-                .setFieldNamingStrategy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-                .create();
+       // Gson gson = new GsonBuilder()
+       //         .setFieldNamingStrategy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+       //         .create();
 
-        InputStream in = getResources().openRawResource(R.raw.presidents);
-        final President presidents[] = gson.fromJson(new InputStreamReader(in), President[].class);
+       // InputStream in = getResources().openRawResource(R.raw.presidents);
+       // final President presidents[] = gson.fromJson(new InputStreamReader(in), President[].class);
 
-        PresidentAdapter adapter = new PresidentAdapter(presidents, (OnPresidentSelectedListener) getActivity());
-        recyclerView.setAdapter(adapter);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://github.com")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        PresidentsService service = retrofit.create(PresidentsService.class);
+
+        Call<List<President>> call = service.listPresidents();
+
+        call.enqueue(new Callback<List<President>>() {
+            @Override
+            public void onResponse(Response<List<President>> response) {
+                List<President> list = response.body();
+
+                PresidentAdapter adapter = new PresidentAdapter(list.toArray(new President[0]), (OnPresidentSelectedListener) getActivity());
+                recyclerView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                //add popup notification that something went wrong
+                t.printStackTrace();
+            }
+        });
     }
 }

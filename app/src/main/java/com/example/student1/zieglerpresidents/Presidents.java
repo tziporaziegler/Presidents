@@ -1,15 +1,16 @@
 package com.example.student1.zieglerpresidents;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Presidents {
-    President[] presidents;
+    List<President> presidents;
 
-    public President[] getPresidents() {
+    public List<President> getPresidents() {
         return presidents;
     }
 
-    public void setPresidents(President[] presidents) {
+    public void setPresidents(List<President> presidents) {
         this.presidents = presidents;
     }
 }
