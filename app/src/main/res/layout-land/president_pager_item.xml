@@ -81,7 +81,7 @@
             android:layout_toEndOf="@id/pic"
             android:layout_toRightOf="@id/pic"
             android:text="@string/died"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/flag_blue"
             android:textSize="24sp" />
 
         <TextView
@@ -104,7 +104,7 @@
             android:layout_toEndOf="@id/pic"
             android:layout_toRightOf="@id/pic"
             android:text="@string/took_office"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/flag_blue"
             android:textSize="24sp" />
 
         <TextView
@@ -127,7 +127,7 @@
             android:layout_toEndOf="@id/pic"
             android:layout_toRightOf="@id/pic"
             android:text="@string/left_office"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/flag_blue"
             android:textSize="24sp" />
 
         <TextView
@@ -150,7 +150,7 @@
             android:layout_toEndOf="@id/pic"
             android:layout_toRightOf="@id/pic"
             android:text="@string/years_in_office"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/flag_blue"
             android:textSize="24sp" />
 
         <TextView
@@ -173,7 +173,7 @@
             android:layout_toEndOf="@id/pic"
             android:layout_toRightOf="@id/pic"
             android:text="@string/party"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/flag_blue"
             android:textSize="24sp" />
 
         <TextView

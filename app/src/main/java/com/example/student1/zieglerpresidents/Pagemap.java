@@ -4,11 +4,11 @@ public class Pagemap {
 
     private Src[] cse_image;
 
-    public Src[] getCse_image() {
+    public Src[] getCseImage() {
         return cse_image;
     }
 
-    public void setCse_image(Src[] cse_image) {
+    public void setCseImage(Src[] cse_image) {
         this.cse_image = cse_image;
     }
 }

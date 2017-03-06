@@ -22,7 +22,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.concurrent.ExecutionException;
 
 public class PresidentPagerAdapter extends PagerAdapter {
 
@@ -43,7 +42,7 @@ public class PresidentPagerAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view == object;
+        return view.equals(object);
     }
 
     @Override
@@ -51,28 +50,48 @@ public class PresidentPagerAdapter extends PagerAdapter {
         //LayoutInflater reads xml and gives you Java views
         LayoutInflater inflater = LayoutInflater.from(container.getContext());
         View view = inflater.inflate(R.layout.president_pager_item, null);
-        TextView name = (TextView) view.findViewById(R.id.name);
-        TextView number = (TextView) view.findViewById(R.id.number);
-        TextView born = (TextView) view.findViewById(R.id.born);
-        TextView died = (TextView) view.findViewById(R.id.died);
-        TextView tookOffice = (TextView) view.findViewById(R.id.tookOffice);
-        TextView leftOffice = (TextView) view.findViewById(R.id.leftOffice);
-        TextView yearsInOffice = (TextView) view.findViewById(R.id.yearsInOffice);
-        TextView party = (TextView) view.findViewById(R.id.party);
-        ImageView pic = (ImageView) view.findViewById(R.id.pic);
 
         President president = presidents[position];
+
+        setPresName(view, president);
+        setPresNumber(view, president);
+        setPresLifeYears(view, president);
+        setPresOfficeDates(view, president);
+        setPresParty(view, president);
+        setPresPic(view);
+
+        container.addView(view);
+        return view;
+    }
+
+    private void setPresName(View view, President president) {
+        TextView name = (TextView) view.findViewById(R.id.name);
         presName = president.getPresident();
         name.setText(presName);
+    }
+
+    private void setPresNumber(View view, President president) {
+        TextView number = (TextView) view.findViewById(R.id.number);
         number.setText(String.valueOf(president.getNumber()));
+    }
+
+    private void setPresLifeYears(View view, President president) {
+        TextView born = (TextView) view.findViewById(R.id.born);
+        TextView died = (TextView) view.findViewById(R.id.died);
 
         born.setText(String.valueOf(president.getBirthYear()));
 
         String deathStr = String.valueOf(president.getDeathYear());
-        if(deathStr.equals("null")) {
+        if ("null".equals(deathStr)) {
             deathStr = "---";
         }
         died.setText(deathStr);
+    }
+
+    private void setPresOfficeDates(View view, President president) {
+        TextView tookOffice = (TextView) view.findViewById(R.id.tookOffice);
+        TextView leftOffice = (TextView) view.findViewById(R.id.leftOffice);
+        TextView yearsInOffice = (TextView) view.findViewById(R.id.yearsInOffice);
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         DateFormat monthFormat = new SimpleDateFormat("MMM");
@@ -97,7 +116,7 @@ public class PresidentPagerAdapter extends PagerAdapter {
 
         Date leftOfficeDate = new Date();
         String leftOfficeStr = president.getLeftOffice();
-        if(leftOfficeStr != null) {
+        if (leftOfficeStr != null) {
             try {
                 leftOfficeDate = dateFormat.parse(president.getLeftOffice());
             } catch (ParseException e) {
@@ -121,10 +140,18 @@ public class PresidentPagerAdapter extends PagerAdapter {
             yearsInOffice.setText(String.valueOf(timeInOfficeNum));
         } else {
             timeInOfficeNum = leftMonth + tookMonth;
-            yearsInOffice.setText(timeInOfficeNum + " Months");
+            String timeInOfficeStr = timeInOfficeNum + " Months";
+            yearsInOffice.setText(timeInOfficeStr);
         }
+    }
 
+    private void setPresParty(View view, President president) {
+        TextView party = (TextView) view.findViewById(R.id.party);
         party.setText(president.getParty());
+    }
+
+    private void setPresPic(View view) {
+        ImageView pic = (ImageView) view.findViewById(R.id.pic);
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -136,7 +163,7 @@ public class PresidentPagerAdapter extends PagerAdapter {
                     InputStream in = conn.getInputStream();
                     String json = IOUtils.toString(in);
                     SearchPicResults results = new Gson().fromJson(json, SearchPicResults.class);
-                    picUrl = results.getItems()[0].getPagemap().getCse_image()[0].getSrc();
+                    picUrl = results.getItems()[0].getPagemap().getCseImage()[0].getSrc();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -157,15 +184,9 @@ public class PresidentPagerAdapter extends PagerAdapter {
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }*/
-        if (picUrl != null && picUrl != "") {
+        if (picUrl != null && !"".equals(picUrl)) {
             Picasso.with(context).load(picUrl).into(pic);
         }
-
-        party.setText(president.getParty());
-
-
-        container.addView(view);
-        return view;
     }
 
     @Override

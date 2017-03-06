@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ee596f999fa743e3be85c89a89a215e7)](https://www.codacy.com/app/tziporaziegler/Presidents?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tziporaziegler/Presidents&amp;utm_campaign=Badge_Grade)
+
 # Presidents App
 An Android App designed to fetch and display information about U.S. Presidents.
 <br />

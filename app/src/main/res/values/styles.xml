@@ -2,12 +2,13 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/flag_red</item>
+        <item name="colorPrimaryDark">@color/flag_blue</item>
     </style>
 
     <style name="PresInfoLabel">
         <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:textColor">@color/flag_blue</item>
     </style>
 
     <style name="PresInfo"></style>

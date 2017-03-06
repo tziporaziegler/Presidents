@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/pic"
             android:text="@string/pres_number"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/flag_blue"
             android:textSize="24sp" />
 
         <TextView
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/number"
             android:text="@string/born"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/flag_blue"
             android:textSize="24sp" />
 
         <TextView
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/born"
             android:text="@string/died"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/flag_blue"
             android:textSize="24sp" />
 
         <TextView
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/died"
             android:text="@string/took_office"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/flag_blue"
             android:textSize="24sp" />
 
         <TextView
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tookOffice"
             android:text="@string/left_office"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/flag_blue"
             android:textSize="24sp" />
 
         <TextView
@@ -136,7 +136,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/leftOffice"
             android:text="@string/years_in_office"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/flag_blue"
             android:textSize="24sp" />
 
         <TextView
@@ -157,7 +157,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/yearsInOffice"
             android:text="@string/party"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/flag_blue"
             android:textSize="24sp" />
 
         <TextView

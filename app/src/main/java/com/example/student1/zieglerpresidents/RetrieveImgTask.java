@@ -1,12 +1,9 @@
 package com.example.student1.zieglerpresidents;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ImageView;
 
 import com.google.gson.Gson;
-import com.squareup.picasso.Picasso;
 
 import org.apache.commons.io.IOUtils;
 
@@ -26,7 +23,7 @@ public class RetrieveImgTask extends AsyncTask<String, Void, String> {
             InputStream in = conn.getInputStream();
             String json = IOUtils.toString(in);
             SearchPicResults results = new Gson().fromJson(json, SearchPicResults.class);
-            return results.getItems()[0].getPagemap().getCse_image()[0].getSrc();
+            return results.getItems()[0].getPagemap().getCseImage()[0].getSrc();
         } catch (IOException e) {
             e.printStackTrace();
         }

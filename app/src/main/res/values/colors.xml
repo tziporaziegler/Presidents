@@ -2,6 +2,8 @@
 <resources>
     <color name="black">#000000</color>
     <color name="grey">#A4A4A4</color>
-    <color name="dark_blue">#0B173B</color>
     <color name="grey_blue">#585863</color>
+
+    <color name="flag_blue">#002868</color>
+    <color name="flag_red">#BF0A30</color>
 </resources>

@@ -10,4 +10,6 @@
     <string name="years_in_office">Years in Office:&#160;</string>
     <string name="died">Died:&#160;</string>
     <string name="born">Born:&#160;</string>
+
+    <string name="list_retrieval_error">Failed to fetch external president list data. Currently using local copy which may not be up to date.</string>
 </resources>
